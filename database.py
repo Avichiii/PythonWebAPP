@@ -10,12 +10,14 @@ def varify(username, passowrd) -> bool:
     cur = conn.cursor()
 
     cur.execute('SELECT password FROM Credentials WHERE user= ?', (username,))
-    database_passowrd = cur.fetchone()[0]
-    cur.close()
+    database_passowrd = cur.fetchone()
 
     if database_passowrd is None: 
-        return False
+        cur.close()
+	return False
     else:
+	database_password = cur.fetchone()[0]
+	cur.close()
         if database_passowrd == passwordsha512: return True
         else: return False
 
