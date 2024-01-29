@@ -11,5 +11,5 @@
     ```
 
 3. **Navigate to the Browser:**
-    Open your web browser and go to [http://127.0.0.1:<port>](http://127.0.0.1:<port>)
+    Open your web browser and go to http://127.0.0.1:port
 
